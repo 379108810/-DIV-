@@ -48,3 +48,51 @@ nlp_APP_ID = '你的应用APP ID'
 nlp_API_KEY = '你的API Key'
 nlp_SECRET_KEY = '你的Secret Key'
 ```
+并将'你的应用APP ID'、'你的API Key'和'你的Secret Key'替换为你在百度AI平台获得的相应值。
+
+```python
+ACCESS_KEY_ID = '你的百度云ACCESS KEY ID'
+SECRET_ACCESS_KEY = '你的百度云SECRET ACCESS KEY'
+BUCKET_NAME = '你的存储桶名称'
+ENDPOINT = '你的存储桶访问端点'
+```
+## 使用方法
+
+在配置了所需的API Key和Secret Key之后，你可以开始使用这个应用。下面是一些基本的使用步骤：
+
+1. **启动应用**：运行主Python脚本来启动应用。例如，如果你的主脚本名为 `main.py`，则可以在命令行中运行：
+
+    ```bash
+    python main.py
+    ```
+
+2. **使用语音识别功能**：应用启动后，可以直接对着麦克风说话。语音输入将被转换成文本，并显示在控制台或应用界面上。
+
+3. **使用图像识别功能**：要使用图像识别功能，你需要上传一张图片。应用将分析图片内容并提供描述。
+
+4. **使用自然语言处理功能**：你可以输入文本，应用将使用自然语言处理技术来理解和响应你的输入。
+
+5. **其他功能**：根据你的项目具体实现，可能还有其他功能可以使用，比如文字转语音、实时天气查询等。
+
+### 注意事项
+
+- 确保在使用应用之前已经正确安装了所有依赖库并配置了API Key和Secret Key。
+- 由于应用涉及到音频和图像处理，确保你的设备已经正确配置了麦克风和摄像头。
+- 在使用图像识别功能时，确保图片链接或文件路径正确无误。
+
+## 示例
+
+这里是一些使用应用的示例代码：
+
+```python
+# 示例：启动应用
+myClient = Baidu(speech_APP_ID, speech_API_key, speech_Key_ID, nlp_APP_ID, nlp_API_KEY, nlp_SECRET_KEY)
+myClient.connectModel(status)
+
+# 示例：使用语音识别功能
+result = myClient.speech_text_transfer(status)
+print(result)
+
+# 示例：使用图像识别功能
+url = myClient.captureUpload()
+myClient.image_recog("告诉我你看到了什么")
