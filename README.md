@@ -29,3 +29,21 @@
 ```bash
 pip install baidu-aip baidubce speechrecognition pygame requests opencv-python
 
+## 配置
+
+在使用本应用之前，你需要在百度AI平台注册并创建应用，以获取API Key和Secret Key。
+
+1. 访问 [百度AI开放平台](https://ai.baidu.com/)。
+2. 注册并登录账户。
+3. 创建新应用，选择相应的API服务（如语音识别、自然语言处理等）。
+4. 完成应用创建后，获取应用的 `API Key` 和 `Secret Key`。
+
+将获取到的API Key和Secret Key填写到代码中相应的位置。例如，在代码中查找以下行：
+
+```python
+speech_APP_ID = '你的应用APP ID'
+speech_API_key = '你的API Key'
+speech_Key_ID = '你的Secret Key'
+nlp_APP_ID = '你的应用APP ID'
+nlp_API_KEY = '你的API Key'
+nlp_SECRET_KEY = '你的Secret Key'
