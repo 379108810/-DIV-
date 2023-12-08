@@ -11,3 +11,18 @@
 4. **自然语言理解**：应用利用百度的自然语言处理技术，理解和响应用户的语言输入。这使得应用能够更好地理解用户的需求，并提供更加智能和个性化的响应。
 
 本项目展示了如何将这些先进的AI技术整合到一个单一的应用中，从而提供了一个功能丰富、响应迅速且用户友好的体验。无论是对于开发者想要学习如何利用这些AI技术，还是对于寻找可靠AI解决方案的企业和个人，本项目都是一个宝贵的资源。
+## 安装
+
+在开始之前，请确保你已经安装了Python和必要的库。该项目依赖于以下Python库：
+
+- `aip`
+- `speech_recognition`
+- `pygame`
+- `requests`
+- `opencv-python`
+
+你可以使用pip来安装这些依赖：
+
+```bash
+pip install baidu-aip speechrecognition pygame requests opencv-python
+
