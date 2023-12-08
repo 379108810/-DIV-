@@ -87,7 +87,7 @@ ENDPOINT = '你的存储桶访问端点'
 ```python
 # 示例：启动应用
 myClient = Baidu(speech_APP_ID, speech_API_key, speech_Key_ID, nlp_APP_ID, nlp_API_KEY, nlp_SECRET_KEY)
-myClient.connectModel(status)
+myClient.connectModel(status) #status 表示目前是否处于被唤醒的状态
 
 # 示例：使用语音识别功能
 result = myClient.speech_text_transfer(status)
@@ -96,3 +96,77 @@ print(result)
 # 示例：使用图像识别功能
 url = myClient.captureUpload()
 myClient.image_recog("告诉我你看到了什么")
+### 高级功能使用
+
+本应用还包括一些高级功能，例如关键词唤醒、摄像头操作、天气查询和日常聊天等。以下是这些功能的具体使用方法：
+
+1. **关键词唤醒**：应用支持通过特定关键词来唤醒。例如，你可以使用“小花”作为唤醒词：
+
+    ```python
+    wake_up_word = "小花"
+    if myClient.speech_text_transfer(status) == wake_up_word:
+        print("唤醒成功，可以开始语音交互")
+    ```
+
+2. **打开摄像头**：应用允许用户通过语音命令或程序命令来打开摄像头。例如，用户说出“打开摄像头”，应用将执行相应的指令：
+
+    ```python
+    if "打开摄像头" in myClient.speech_text_transfer(status):
+        myClient.capture_frame(stop_event)
+        print("摄像头已打开")
+    ```
+
+3. **查看天气**：用户可以询问关于当前或未来天气的信息，应用将提供相应的天气信息：
+
+    ```python
+    weather_query = "今天南昌的天气怎么样？"
+    if "天气" in weather_query:
+        response = get_weather(weather_query)
+        print(response)
+    ```
+
+4. **日常聊天**：应用支持简单的日常聊天功能，可以回应用户的问候或进行基本的对话：
+
+    ```python
+    chat_input = "你好小花"
+    if "你好" in chat_input:
+        response = myClient.connectModel(status)
+        print(response)
+    ```
+
+请确保在使用这些高级功能之前，应用已正确配置并且所有依赖库均已安装。
+
+### 注意事项
+
+- 确保在使用摄像头功能时，设备的摄像头已经正确安装并能够被应用访问。
+- 天气查询功能可能需要网络连接，并且依赖于外部API或服务。
+- 语音识别和处理的准确性可能受到环境噪音等因素的影响。
+
+### 示例
+```
+这里是使用高级功能的一些示例代码：
+
+```python
+# 示例：使用关键词唤醒
+wake_up_word = "小花"
+status = 0
+if myClient.speech_text_transfer(status) == wake_up_word:
+    print("唤醒成功，可以开始语音交互")
+
+# 示例：打开摄像头
+if "打开摄像头" in myClient.speech_text_transfer(status):
+    myClient.capture_frame(stop_event)
+    print("摄像头已打开")
+
+# 示例：查询天气
+weather_query = "今天南昌的天气怎么样？"
+if "天气" in weather_query:
+    response = get_weather(weather_query)
+    print(response)
+
+# 示例：进行日常聊天
+chat_input = "你好小花"
+if "你好" in chat_input:
+    response = myClient.connectModel(status)
+    print(response)
+
