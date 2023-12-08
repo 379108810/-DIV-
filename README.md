@@ -13,16 +13,19 @@
 本项目展示了如何将这些先进的AI技术整合到一个单一的应用中，从而提供了一个功能丰富、响应迅速且用户友好的体验。无论是对于开发者想要学习如何利用这些AI技术，还是对于寻找可靠AI解决方案的企业和个人，本项目都是一个宝贵的资源。
 ## 安装
 
-在开始之前，请确保你已经安装了Python和必要的库。该项目依赖于以下Python库：
 
-- `aip`
-- `speech_recognition`
-- `pygame`
-- `requests`
-- `opencv-python`
+在开始之前，请确保你已经安装了Python和项目所需的库。该项目依赖于以下Python库：
+
+- `aip` (百度AI平台的Python SDK，用于语音识别和自然语言处理)
+- `baidubce` (百度云服务的Python SDK)
+- `speech_recognition` (用于语音识别)
+- `pygame` (用于处理音频播放)
+- `requests` (用于HTTP请求)
+- `opencv-python` (用于图像处理)
+- `hashlib`、`io`、`json`、`time`、`re`、`base64`、`threading`、`concurrent.futures` (Python标准库)
 
 你可以使用pip来安装这些依赖：
 
 ```bash
-pip install baidu-aip speechrecognition pygame requests opencv-python
+pip install baidu-aip baidubce speechrecognition pygame requests opencv-python
 
