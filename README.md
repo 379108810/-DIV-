@@ -61,7 +61,6 @@ ENDPOINT = '你的存储桶访问端点'
 以下是应用的基本使用步骤：
 
 1. **启动应用**：运行主Python脚本来启动应用。例如，如果你的主脚本名为 `main.py`，则可以在命令行中运行：
-
     ```bash
     python main.py
     ```
@@ -93,63 +92,3 @@ if "打开摄像头" in myClient.speech_text_transfer(status):
     url = myClient.captureUpload()
     myClient.image_recog("告诉我你看到了什么")
 
-```
-### 注意事项
-
-- 确保在使用应用之前已经正确安装了所有依赖库并配置了API Key和Secret Key。
-- 由于应用涉及到音频和图像处理，确保你的设备已经正确配置了麦克风和摄像头。
-- 在使用图像识别功能时，确保图片链接或文件路径正确无误。
-
-## 示例
-
-这里是一些使用应用的示例代码：
-
-```python
-# 示例：启动应用
-myClient = Baidu(speech_APP_ID, speech_API_key, speech_Key_ID, nlp_APP_ID, nlp_API_KEY, nlp_SECRET_KEY)
-myClient.connectModel(status) #status 表示目前是否处于被唤醒的状态
-
-# 示例：使用语音识别功能
-result = myClient.speech_text_transfer(status)
-print(result)
-
-# 示例：使用图像识别功能
-url = myClient.captureUpload()
-myClient.image_recog("告诉我你看到了什么")
-### 高级功能使用
-
-本应用还包括一些高级功能，例如关键词唤醒、摄像头操作、天气查询和日常聊天等。以下是这些功能的具体使用方法：
-
-### 示例
-```
-这里是使用高级功能的一些示例代码：
-
-```python
-# 示例：使用关键词唤醒
-wake_up_word = "小花"
-status = 0
-if myClient.speech_text_transfer(status) == wake_up_word:
-    print("唤醒成功，可以开始语音交互")
-
-# 示例：打开摄像头
-if "打开摄像头" in myClient.speech_text_transfer(status):
-    myClient.capture_frame(stop_event)
-    print("摄像头已打开")
-
-# 示例：查询天气
-weather_query = "今天南昌的天气怎么样？"
-if "天气" in weather_query:
-    response = get_weather(weather_query)
-    print(response)
-
-# 示例：进行日常聊天
-chat_input = "你好小花"
-if "你好" in chat_input:
-    response = myClient.connectModel(status)
-    print(response)
-
-### 注意事项
-
-- 确保在使用摄像头功能时，设备的摄像头已经正确安装并能够被应用访问。
-- 天气查询功能可能需要网络连接，并且依赖于外部API或服务。
-- 语音识别和处理的准确性可能受到环境噪音等因素的影响。
