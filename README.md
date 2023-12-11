@@ -93,7 +93,7 @@ if "打开摄像头" in myClient.speech_text_transfer(status):
     url = myClient.captureUpload()
     myClient.image_recog("告诉我你看到了什么")
 
-
+```
 ### 注意事项
 
 - 确保在使用应用之前已经正确安装了所有依赖库并配置了API Key和Secret Key。
